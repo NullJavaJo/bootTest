@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.myboot02.service.UserService">
+
+	<insert id="addUser" parameterType="com.myboot02.vo.User">
+	
+	insert into yoon(userId, password)
+	values('${userId}','${password}')
+	
+	</insert> 
+	
+	<select id="getuserList" parameterType="com.myboot02.vo.User">
+	select * from yoon
+	</select>
+	
+</mapper>
