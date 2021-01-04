@@ -6,13 +6,10 @@
 
 	<insert id="addUser" parameterType="com.myboot02.vo.User">
 	
-	insert into yoon(userId, password)
-	values('${userId}','${password}')
-	
-	</insert> 
-	
-	<select id="getuserList" parameterType="com.myboot02.vo.User">
-	select * from yoon
-	</select>
+	insert into yoon(userId, password,nickname,email,language)
+	values('${userId}','${password}','${ninkname}','${email}','${language}')
+
+	</insert>
+
 	
 </mapper>

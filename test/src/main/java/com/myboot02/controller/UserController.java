@@ -18,7 +18,7 @@ public class UserController {
 	public String addUser(User user) throws Exception{
 		
 		//System.out.println(user);
-		return "index"; 
+		return "addUser";
 	}
 	
 	@RequestMapping("test02")
@@ -26,7 +26,7 @@ public class UserController {
 		System.out.println(user);
 		userService.addUser(user);
 		
-		return "index";
+		return "addUser";
 	}
 	
 	

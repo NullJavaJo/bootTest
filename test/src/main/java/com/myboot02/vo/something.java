@@ -1,2 +1,4 @@
-package com.myboot02.vo;public class something {
+package com.myboot02.vo;
+
+public class something {
 }
