@@ -1,11 +1,12 @@
 package com.myboot02.service;
 
+import com.myboot02.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.myboot02.dao.UserDao;
-import com.myboot02.vo.User;
+import com.myboot02.domain.User;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -15,15 +16,18 @@ public class UserServiceImpl implements UserService {
 	UserDao userDao;
 
 	public UserServiceImpl() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void addUser(User user) throws Exception {
-		// TODO Auto-generated method stub
-		userDao.addUser(user);
-
+	public void addUser(UserDto.signUpDto user) throws Exception {
+		userDao.addUser(user.addUser());//converting
 	}
+
+//	@Override
+//	public User login(UserDto.loginDto user) throws Exception {
+//
+//		return userDao.login(user.getUserId());
+//	}
 
 	@Override
 	public User getUser() throws Exception {

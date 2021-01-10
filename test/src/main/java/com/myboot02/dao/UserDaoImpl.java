@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.myboot02.vo.User;
+import com.myboot02.domain.User;
 
 @Repository("userDaoImpl")
 public class UserDaoImpl implements UserDao {
@@ -13,7 +13,6 @@ public class UserDaoImpl implements UserDao {
 	SqlSession sqlSession;
 	
 	public UserDaoImpl() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -21,6 +20,12 @@ public class UserDaoImpl implements UserDao {
 		sqlSession.insert("UserMapper.addUser", user);
 
 	}
+
+//	@Override
+//	public User login(String userId) throws Exception {
+//		return sqlSession.selectOne("UserMapper.login", userId);
+//	}
+
 
 	@Override
 	public User getUser() throws Exception {
