@@ -4,12 +4,19 @@
 
 <mapper namespace="com.myboot02.service.UserService">
 
-	<insert id="addUser" parameterType="com.myboot02.vo.User">
+
+	<insert id="addUser" parameterType="com.myboot02.domain.User">
 	
-	insert into yoon(userId, password,nickname,email,language)
-	values('${userId}','${password}','${ninkname}','${email}','${language}')
+	insert into users(userName, userId, password, nickname , email, certificationNo)
+	values('${userName}','${userId}','${password}','${nickname}','${email}','${certificationNo}')
 
 	</insert>
+
+	<select id="login" parameterType="com.myboot02.domain.User">
+	select userName, userId, password, nickname, email
+	from users
+	where userId = '${value}'
+	</select>
 
 	
 </mapper>
